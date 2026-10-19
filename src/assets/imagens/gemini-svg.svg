@@ -1,0 +1,31 @@
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  viewBox="0 0 24 24" 
+  width="100%" 
+  height="100%"
+>
+  <!-- Definições dos Gradientes Sutis -->
+  <defs>
+    <!-- Gradiente para a Cabeça do Pistão (Metal Polido) -->
+    <linearGradient id="pistonHeadGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5F5F7; stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Gradiente para a Biela (Volume Sutil) -->
+    <linearGradient id="rodGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F5F7; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EAEAEF; stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Cabeça do Pistão -->
+  <path d="M6 3C5.44772 3 5 3.44772 5 4V9C5 9.55228 5.44772 10 6 10H7V11C7 11.5523 7.44772 12 8 12H16C16.5523 12 17 11.5523 17 11V10H18C18.5523 10 19 9.55228 19 9V4C19 3.44772 18.5523 3 18 3H6ZM7 5H17V6H7V5ZM7 7H17V8H7V7Z" fill="url(#pistonHeadGradient)" />
+  
+  <!-- Pino do Pistão / Encaixe da Biela (com Sombra Projetada Sutil) -->
+  <circle cx="12" cy="11" r="1.5" fill="#3A3A3C" opacity="0.3"/>
+  <circle cx="12" cy="11" r="1.5" fill="#EAEAEF" />
+
+  <!-- Biela (Corpo com Volume) -->
+  <path d="M10.8 12.8L10 18.5C9.4 18.9 9 19.6 9 20.5C9 22.1569 10.3431 23.5 12 23.5C13.6569 23.5 15 22.1569 15 20.5C15 19.6 14.6 18.9 14 18.5L13.2 12.8H10.8ZM12 19C12.8284 19 13.5 19.6716 13.5 20.5C13.5 21.3284 12.8284 22 12 22C11.1716 22 10.5 21.3284 10.5 20.5C10.5 19.6716 11.1716 19 12 19Z" fill="url(#rodGradient)" />
+</svg>

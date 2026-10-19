@@ -1,0 +1,537 @@
+.vehicle-detail {
+  overflow: hidden;
+  background: #08090c;
+  color: #f5f5f5;
+}
+
+.vehicle-intro,
+.engine-section {
+  width: min(100% - 3rem, 1200px);
+  margin-inline: auto;
+}
+
+.vehicle-intro {
+  padding-top: clamp(8rem, 15vh, 11rem);
+}
+
+.vehicle-intro-copy {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.detail-eyebrow {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.vehicle-intro h1 {
+  margin: 1rem 0 0;
+  font-family: var(--font-roboto), Arial, sans-serif;
+  font-size: clamp(2.7rem, 7vw, 6.4rem);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.vehicle-intro h1 span {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.vehicle-introduction {
+  max-width: 650px;
+  margin: 1.35rem auto 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  line-height: 1.85;
+}
+
+.vehicle-gallery {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: 16 / 8.4;
+  min-height: 300px;
+  max-height: 690px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(80, 82, 95, 0.24), transparent 56%),
+    #101116;
+  transition:
+    border-color 350ms ease,
+    box-shadow 450ms ease;
+}
+
+.vehicle-gallery:hover,
+.vehicle-gallery:focus-within {
+  border-color: rgba(239, 68, 68, 0.6);
+  box-shadow: 0 0 38px rgba(239, 68, 68, 0.1);
+}
+
+.vehicle-gallery-slides,
+.vehicle-gallery-image,
+.vehicle-gallery-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.vehicle-gallery-image {
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.035);
+  transition:
+    opacity 1200ms ease,
+    transform 6500ms cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+
+.vehicle-gallery-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  background-color: #101116;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+  transform: scale(1.02);
+  transition:
+    opacity 1200ms ease,
+    transform 6500ms cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+
+.vehicle-gallery-placeholder.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.vehicle-gallery-placeholder > span {
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.vehicle-gallery-placeholder > p {
+  margin: 1.25rem 0 0;
+  font-size: 0.85rem;
+}
+
+.vehicle-gallery-placeholder > small {
+  margin-top: 0.65rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.55rem;
+  letter-spacing: 0.17em;
+}
+
+.vehicle-gallery-image.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.vehicle-gallery-shade {
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    transparent 48%,
+    rgba(8, 9, 12, 0.1) 65%,
+    rgba(8, 9, 12, 0.74) 100%
+  );
+  pointer-events: none;
+}
+
+.vehicle-gallery-caption,
+.vehicle-gallery-controls {
+  position: absolute;
+  z-index: 2;
+  bottom: 1.35rem;
+  display: flex;
+  align-items: center;
+}
+
+.vehicle-gallery-caption {
+  left: 1.5rem;
+  right: 1.5rem;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.vehicle-gallery-controls {
+  left: 50%;
+  gap: 1.15rem;
+  transform: translateX(-50%);
+}
+
+.gallery-arrow,
+.gallery-dot {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: #fff;
+  background: rgba(8, 9, 12, 0.28);
+  cursor: pointer;
+  transition:
+    background 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ease;
+}
+
+.gallery-arrow {
+  width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 50%;
+  font-size: 0.95rem;
+}
+
+.gallery-arrow:hover {
+  transform: scale(1.08);
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.gallery-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.gallery-dot {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.gallery-dot.is-active {
+  width: 1.2rem;
+  border-color: #ef4444;
+  background: #ef4444;
+}
+
+.gallery-arrow:focus-visible,
+.gallery-dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.vehicle-specifications {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1.1rem 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.vehicle-specification {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.1rem 1.3rem;
+}
+
+.vehicle-specification + .vehicle-specification {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vehicle-specification dt {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.61rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.vehicle-specification dd {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.engine-section {
+  padding-block: clamp(6rem, 11vw, 10rem);
+}
+
+.engine-section-heading {
+  margin-bottom: 2.5rem;
+}
+
+.engine-section-heading h2 {
+  margin: 0.8rem 0 0;
+  font-family: var(--font-roboto), Arial, sans-serif;
+  font-size: clamp(2.2rem, 5vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 1;
+}
+
+.engine-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  align-items: stretch;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.engine-blueprint {
+  display: grid;
+  min-height: 380px;
+  overflow: hidden;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #0b1728;
+  transition:
+    transform 450ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    border-color 350ms ease,
+    box-shadow 450ms ease;
+}
+
+.engine-blueprint:hover {
+  transform: translateY(-4px);
+  border-color: rgba(239, 68, 68, 0.62);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
+}
+
+.engine-blueprint > img {
+  width: 100%;
+  height: auto;
+  transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.engine-blueprint:hover > img {
+  transform: scale(1.025);
+}
+
+.blueprint-placeholder {
+  display: flex;
+  min-height: 380px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.52);
+  text-align: center;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.placeholder-mark {
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 1.5rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.blueprint-placeholder > p:not(.detail-eyebrow) {
+  margin: 0.8rem 0 0;
+  font-size: 0.9rem;
+}
+
+.placeholder-format {
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 0.58rem;
+  letter-spacing: 0.17em;
+}
+
+.engine-copy {
+  align-self: center;
+}
+
+.engine-copy h3 {
+  margin: 1rem 0 0;
+  font-size: clamp(1.65rem, 3.2vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.12;
+}
+
+.engine-displacement {
+  margin: 0.8rem 0 0;
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+}
+
+.engine-displacement span {
+  margin-inline: 0.35rem;
+  color: #ef4444;
+}
+
+.engine-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.engine-facts > div {
+  display: flex;
+  min-height: 4.4rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.42rem;
+  padding: 0.75rem 0;
+}
+
+.engine-facts > div:nth-child(even) {
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.engine-facts > div:nth-child(n + 3) {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.engine-facts span {
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.engine-facts strong {
+  font-size: 0.83rem;
+  font-weight: 400;
+}
+
+.engine-description {
+  margin-top: 1.6rem;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.87rem;
+  line-height: 1.85;
+}
+
+.engine-description p {
+  margin: 0 0 1rem;
+}
+
+@media (max-width: 800px) {
+  .engine-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .engine-blueprint,
+  .blueprint-placeholder {
+    min-height: 0;
+  }
+
+  .engine-blueprint > img {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .engine-copy {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 560px) {
+  .vehicle-intro,
+  .engine-section {
+    width: min(100% - 2rem, 1200px);
+  }
+
+  .vehicle-intro {
+    padding-top: 7.5rem;
+  }
+
+  .vehicle-intro-copy {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .vehicle-introduction {
+    margin-left: 0;
+  }
+
+  .vehicle-gallery {
+    min-height: 340px;
+    aspect-ratio: 4 / 5;
+  }
+
+  .vehicle-gallery-image {
+    object-position: center;
+  }
+
+  .vehicle-gallery-caption {
+    bottom: 3.5rem;
+    left: 1rem;
+    right: 1rem;
+    font-size: 0.55rem;
+  }
+
+  .vehicle-gallery-controls {
+    bottom: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .gallery-arrow {
+    width: 1.85rem;
+    height: 1.85rem;
+  }
+
+  .vehicle-specification {
+    gap: 0.4rem;
+    padding: 0.85rem 0.65rem;
+  }
+
+  .vehicle-specification dt {
+    font-size: 0.5rem;
+    letter-spacing: 0.1em;
+  }
+
+  .vehicle-specification dd {
+    font-size: 0.95rem;
+  }
+
+  .engine-section {
+    padding-block: 5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vehicle-gallery,
+  .vehicle-gallery-image,
+  .gallery-arrow,
+  .gallery-dot,
+  .engine-blueprint,
+  .engine-blueprint > img {
+    transition-duration: 0.01ms;
+  }
+
+  .vehicle-gallery-image,
+  .vehicle-gallery-placeholder,
+  .vehicle-gallery-image.is-active,
+  .vehicle-gallery-placeholder.is-active,
+  .engine-blueprint:hover,
+  .engine-blueprint:hover > img {
+    transform: none;
+  }
+}

@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.body {
+    position: fixed;
+    /* Fixa no topo para que o conteúdo passe por trás */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    /* Altura da barra */
+    padding: 0 2rem;
+    z-index: 1000;
+    /* Garante que fique acima de tudo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(31, 31, 31, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.enterprise {
+    font-family: Roboto, Geist_Mono;
+    font-size: 1.3rem;
+    margin-left: 1rem;
+    margin-right: auto;
+    transition: all 0.2s ease-in-out;
+}
+
+.enterprise:hover {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.01);
+}
+
+.icon {
+    margin-left: 3rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.icon:hover {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.01);
+}

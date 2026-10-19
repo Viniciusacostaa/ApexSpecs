@@ -1,0 +1,8 @@
+[33m3efa9cd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: pull origin main --rebase (finish): returning to refs/heads/main
+[33m3efa9cd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{1}: pull origin main --rebase (pick): Primeira versão do projeto
+[33ma0666d0[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{2}: pull origin main --rebase (start): checkout a0666d0679b7a497094704e7c1d6e0bc9a1edd4b
+[33m7f84154[m HEAD@{3}: commit: Primeira versão do projeto
+[33m9a062c6[m HEAD@{4}: checkout: moving from feature/nova-funcionalidade to main
+[33m6ff6a97[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/feature/nova-funcionalidade[m[33m, [m[1;32mmaster[m[33m, [m[1;32mfeature/nova-funcionalidade[m[33m)[m HEAD@{5}: checkout: moving from master to feature/nova-funcionalidade
+[33m6ff6a97[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/feature/nova-funcionalidade[m[33m, [m[1;32mmaster[m[33m, [m[1;32mfeature/nova-funcionalidade[m[33m)[m HEAD@{6}: commit: Primeira versão do projeto
+[33m4107c20[m HEAD@{7}: commit (initial): Initial commit from Create Next App
